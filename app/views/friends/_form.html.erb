@@ -11,29 +11,30 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :first_name, style: "display: block" %>
-    <%= form.text_field :first_name %>
+  <div class="form-group margin-bottom-10">
+    <%= form.label :first_name, style: "display: block", class:'margin-bottom-5' %>
+    <%= form.text_field :first_name, class:'form-control' %>
   </div>
 
-  <div>
-    <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email %>
+  <div class="form-group margin-bottom-10">
+    <%= form.label :email, style: "display: block", class:'margin-bottom-5' %>
+    <%= form.text_field :email, class:'form-control' %>
   </div>
 
-  <div>
-    <%= form.label :phone, style: "display: block" %>
-    <%= form.text_field :phone %>
+  <div class="form-group margin-bottom-10">
+    <%= form.label :phone, style: "display: block", class:'margin-bottom-5' %>
+    <%= form.text_field :phone, class:'form-control' %>
   </div>
 
-  <div>
-    <%= form.label :twitter, style: "display: block" %>
-    <%= form.text_field :twitter %>
+  <div class="form-group margin-bottom-10">
+    <%= form.label :twitter, style: "display: block", class:'margin-bottom-5' %>
+    <%= form.text_field :twitter, class:'form-control' %>
   </div>
 
   <br/>
 
-  <%= form.submit class: 'btn btn-primary', value: 'Save' %>
+  <% if @friend.id.nil?; prefix = "Add"; else prefix = "Update"; end; %>
+  <%= form.submit class: 'btn btn-primary', value: "#{prefix} Friend" %>
   or
   <%= link_to 'Cancel', friends_path, class: 'btn btn-secondary' %>
 <% end %>
